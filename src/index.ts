@@ -1,4 +1,4 @@
-import { Application, Sprite, Container } from "pixi.js";
+import { Application, Sprite } from "pixi.js";
 
 const app = new Application({
   view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -9,30 +9,38 @@ const app = new Application({
   height: 480,
 });
 
-const conty: Container = new Container();
-conty.x = 200;
-conty.y = 0;
-app.stage.addChild(conty);
+// const conty: Container = new Container();
+// conty.x = 200;
+// conty.y = 0;
+// app.stage.addChild(conty);
 
-const secondConty: Container = new Container();
-secondConty.x = 300;
-secondConty.y = 0;
-app.stage.addChild(secondConty);
+// const secondConty: Container = new Container();
+// secondConty.x = 300;
+// secondConty.y = 0;
+// app.stage.addChild(secondConty);
 
-const thirdConty: Container = new Container();
-thirdConty.x = 400;
-thirdConty.y = 0;
-app.stage.addChild(thirdConty);
+// const thirdConty: Container = new Container();
+// thirdConty.x = 400;
+// thirdConty.y = 0;
+// app.stage.addChild(thirdConty);
 
-const clampy: Sprite = Sprite.from("clampy.png");
-clampy.x = 0;
-clampy.y = 0;
+const clampy: Sprite = Sprite.from("assets/clampy.png");
+// clampy.x = 0;
+// clampy.y = 0;
 
-const clampy2: Sprite = Sprite.from("clampy.png");
-clampy2.x = -100;
-clampy2.y = 50;
+// const clampy2: Sprite = Sprite.from("clampy.png");
+// clampy2.x = -100;
+// clampy2.y = 50;
 
-secondConty.addChild(clampy);
-clampy.addChild(clampy2);
+// conty.addChild(clampy);
+// clampy.addChild(clampy2);
 
-console.log(conty);
+// console.log(conty);
+
+clampy.anchor.set(0.5);
+
+// setting it to "the middle of the screen
+clampy.x = app.screen.width / 2;
+clampy.y = app.screen.height / 2;
+
+app.stage.addChild(clampy);
